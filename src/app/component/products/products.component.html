@@ -1,0 +1,42 @@
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="filter('')">
+                <img style="width:50px;"src="https://as2.ftcdn.net/v2/jpg/02/99/87/13/1000_F_299871312_oYYG9Lh5dYcBzTRinxyKolo8xtpzpPcU.jpg">
+                <h6>All Products</h6>
+            </a>
+        </div>
+        <div class="item">
+           <a (click)="filter('electronics')">
+                <img style="width:50px;"src="https://as1.ftcdn.net/v2/jpg/01/84/18/30/1000_F_184183042_rJWKhx9ojspLRP7ynWf6nbsxlpVCa9fI.jpg ">
+                <h6>Electronics</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('fashion')">
+                <img style="width:50px;"src="https://as2.ftcdn.net/v2/jpg/01/08/81/95/1000_F_108819518_ahKpHhnrndFSNtNr9VsB6ZLfoET7z22Q.jpg">
+                <h6>Fashion</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('jewelery')">
+                <img style="width:50px;"src="https://as2.ftcdn.net/v2/jpg/02/60/96/07/1000_F_260960750_hd3CI8WmZZNxEx8BxUZkFR3Pm7634nEb.jpg">
+                <h6>Jewellery</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of  filterCategory | filter:searchKey:'title'">
+        <div class="card col-md-3">
+            <img src="{{item.image}}" alt="">
+            <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis; max-width: 100ch">{{item.title}}</h5>
+            <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis; max-width: 100ch"></p>
+            <p><strong>Price:</strong>${{item.price}}</p>
+            <button class="btn btn-dark" (click)=addtocart(item)>Add to cart</button>
+        </div>
+    </ng-container>
+    </div>
+</div>

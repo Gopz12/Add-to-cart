@@ -1,0 +1,17 @@
+ <header>
+    <div class="navbar navbar-dark bg-black shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size:40px;" class="fas fa-bag-shopping ms-2"></i>
+            <strong class="text-white ms-3" style="font-size:30px;">ZARA</strong>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+            </div>
+            <span class="fas fa-search search-icon"></span>
+        </div>
+        <button routerLink="cart" class="btn btn-dark">
+            <i style="font-size:30px;" class="fas fa-cart-plus">
+                <div style="font-size:8px;" class="badge bg-danger">{{totalItem}}</div>
+            </i>
+        </button>
+    </div>
+ </header>
